@@ -94,6 +94,17 @@ class User(AbstractBaseUser, PermissionsMixin, TrackingModel):
         ),
     )
 
+
+# setting default values
+    # full_name = models.CharField(_('full name'), max_length=255, default='')
+    # phone_number = models.CharField(_('phone number'), max_length=255, default='000-000-0000')
+    # date_of_birth = models.DateField(_('date of birth'), blank=False, null=False, default="2022-04-04")
+
+    full_name = models.CharField(_('full name'), max_length=255, blank=False)
+    phone_number = models.CharField(_('phone number'), max_length=255, blank=False)
+    date_of_birth = models.DateField(_('date of birth'), blank=False, null=False)
+
+
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
 
     objects = MyUserManager()
