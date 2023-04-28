@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'authentication',
     'diabetes_app',
+    'questions_app',
+    'question_answer'
 ]
 
 MIDDLEWARE = [
