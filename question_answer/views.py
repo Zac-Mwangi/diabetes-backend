@@ -13,7 +13,7 @@ def question_answer_list_get(request,pk):
     List all question answers for answerd by a particuar user
     """
     question_answers = QuestionAnswer.objects.filter(user=pk)
-    serializer = QuestionAnswerSerializer(question_answers, many=True)
+    serializer = QuestionAnswerSerializer(question_answers, many=True, context={'request': request})
     return Response(serializer.data)
 
 
@@ -25,7 +25,7 @@ def question_answer_list_post(request):
     """
     Create a new question answer
     """
-    serializer = QuestionAnswerSerializer(data=request.data)
+    serializer = QuestionAnswerSerializer(data=request.data , context={'request': request})
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
