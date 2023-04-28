@@ -23,4 +23,5 @@ urlpatterns = [
     path('api/diabetes/', include('diabetes_app.urls')),
     path('api/questions/', include('questions_app.urls')),
     path('api/questions-answers/', include('question_answer.urls')),
+    path('api/image/', include('image_app.urls')),
 ]

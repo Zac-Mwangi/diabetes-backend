@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'authentication',
     'diabetes_app',
     'questions_app',
-    'question_answer'
+    'question_answer',
+    'image_app',
+    'image_app_get'
 ]
 
 MIDDLEWARE = [
