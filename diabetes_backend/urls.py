@@ -24,4 +24,5 @@ urlpatterns = [
     path('api/questions/', include('questions_app.urls')),
     path('api/questions-answers/', include('question_answer.urls')),
     path('api/image/', include('image_app.urls')),
+    path('api/image-record/', include('image_app_get.urls')),
 ]
