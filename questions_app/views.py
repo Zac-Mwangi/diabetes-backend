@@ -4,11 +4,6 @@ from .serializers import QuestionSerializer
 
 
 class QuestionList(generics.ListCreateAPIView):
-
-    # bypass authentication
-    authentication_classes = []
-
-
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
 
@@ -18,12 +13,7 @@ class QuestionList(generics.ListCreateAPIView):
 
 
 class QuestionDetail(generics.RetrieveUpdateDestroyAPIView):
-
-
-    # bypass authentication
-    authentication_classes = []
-
-    
+       
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
 

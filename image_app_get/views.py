@@ -6,16 +6,12 @@ from .models import ImageRecord
 from .serializers import ImageRecordSerializer
 
 @api_view(['GET'])
-@authentication_classes([])
-@permission_classes([])
 def image_record_get(request,pk):
     image_record = ImageRecord.objects.filter(user=pk)
     serializer = ImageRecordSerializer(image_record, many=True, context={'request': request})
     return Response(serializer.data)
     
 @api_view(['POST'])
-@authentication_classes([])
-@permission_classes([])
 def image_record_post(request):
     serializer = ImageRecordSerializer(data=request.data, context={'request': request})
     if serializer.is_valid():

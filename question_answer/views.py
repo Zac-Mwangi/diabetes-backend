@@ -6,8 +6,6 @@ from .models import QuestionAnswer
 from .serializers import QuestionAnswerSerializer
 
 @api_view(['GET'])
-@authentication_classes([])
-@permission_classes([])
 def question_answer_list_get(request,pk):
     """
     List all question answers for answerd by a particuar user
@@ -19,8 +17,6 @@ def question_answer_list_get(request,pk):
 
 # post the questions and answers for the user 
 @api_view(['POST'])
-@authentication_classes([])
-@permission_classes([])
 def question_answer_list_post(request):
     """
     Create a new question answer

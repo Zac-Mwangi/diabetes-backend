@@ -8,27 +8,16 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 
 class ReportListCreateView(ListCreateAPIView):
-
-# bypass authentication
-    authentication_classes = []
-
     queryset = ReportModel.objects.all()
     serializer_class = ReportSerializer
 
 class ReportRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
     
-# bypass authentication
-    authentication_classes = []
-
     queryset = ReportModel.objects.all()
     serializer_class = ReportSerializer
 
 
-
-
 @api_view(['GET'])
-@authentication_classes([])
-@permission_classes([])
 def User_Reports(request, pk):
     """
     List all question answers for answered by a particular user
